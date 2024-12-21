@@ -1,8 +1,9 @@
-import { Router } from "express";
-import { getDashboardMetrics } from "../controllers/dashboardController";
+import express from 'express';
+const router = express.Router();
 
-const router = Router();
+// Define your routes here
+router.get('/', (req, res) => {
+  res.send('Dashboard route');
+});
 
-router.get("/", getDashboardMetrics);
-
-export default router;
+export default router;  // Add a default export here

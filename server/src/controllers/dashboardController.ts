@@ -1,14 +1,16 @@
+
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
+
 
 export const getDashboardMetrics = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
-    const popularProducts = await prisma.products.findMany({
+    const popularProducts = await prisma.product.findMany({
       take: 15,
       orderBy: {
         stockQuantity: "desc",
